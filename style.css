@@ -1,0 +1,2409 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* all similar content styling codes */
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services, .skills, .teams, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: crimson;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 15px 0;
+    background: crimson;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: crimson;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: crimson;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+/* menu btn styling */
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: crimson;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    border-bottom-width: 2px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+.scroll-up-btn:hover{
+    filter: brightness(90%);
+}
+
+
+/* home section styling */
+.home{
+    display: flex;
+    background: url("images/banner.jpg") no-repeat center;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+  width: 100%;
+  display: flex;
+}
+.home .max-width .row{
+  margin-right: 0;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: crimson;
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.card .box a{
+    display: inline-block;
+    background:  rgba(30, 215, 135, 0.708);
+    color: #fff;
+    font-size: 18px;
+    padding: 5px 13px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid rgba(30, 215, 135, 0.708);
+    /* transition: all 0.3s ease; */
+}
+.home .home-content a:hover{
+    color: crimson;
+    background: none;
+}
+
+/* about section styling */
+.about .title::after{
+    content: "who i am";
+}
+.about .about-content .left{
+    width: 45%;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.about .about-content .right{
+    width: 55%;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+    color: crimson;
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    color: crimson;
+    background: none;
+}
+
+/* services section styling */
+.services, .teams{
+    color:#fff;
+    background: #111;
+}
+.services .title::before,
+.teams .title::before{
+    background: #fff;
+}
+.services .title::after,
+.teams .title::after{
+    background: #111;
+    /* content: "what i provide"; */
+}
+.services .serv-content .card{
+    width: calc(33% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 50px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover{
+    background: crimson;
+    color: #555;
+}
+.services .serv-content .card .box{
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+.services .serv-content .card i{
+    font-size: 50px;
+    color: crimson;
+    transition: color 0.3s ease;
+}
+.services .serv-content .card:hover i{
+    color: #fff;
+}
+.services .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+/* skills section styling */
+.skills-images img {
+    height: 140px;
+    width: 140px;
+    /* object-fit: cover; */
+    border-radius: 5%;
+    /* border: 5px solid crimson; */
+    transition: all 0.3s ease;
+  }
+  .skills-images img:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    height: 110%;
+  }
+
+.skills .title::after{
+    content: "what i know";
+}
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+    height: 60vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills .skills-content .left p{
+    text-align: justify;
+}
+.skills .skills-content .left a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover{
+    color: crimson;
+    background: none;
+}
+.skills .skills-content .right .bars{
+    margin-bottom: 15px;
+}
+.skills .skills-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .right span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.skills .skills-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: crimson;
+}
+.skills-content .right .html::before{
+    width: 90%;
+}
+.skills-content .right .css::before{
+    width: 60%;
+}
+.skills-content .right .js::before{
+    width: 80%;
+}
+.skills-content .right .php::before{
+    width: 50%;
+}
+.skills-content .right .mysql::before{
+    width: 70%;
+}
+
+/* teams section styling */
+.teams .title::after{
+    content: "See my work";
+}
+.teams .carousel .card{
+    background: rgba(60, 223, 226, 0.459);
+    border-radius: 6px;
+    padding: 25px 35px;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover{
+    background: crimson;
+    
+}
+.teams .carousel .card .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover .box{
+    transform: scale(1.05);
+}
+.teams .carousel .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.repo-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 45px;
+    margin-top: 5%;
+    /* border: 2px solid wheat; */
+  }
+   
+  .repo-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .demo-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .techStack {
+    color: purple;
+  }
+
+  .demo-div a,
+  .repo-div a,
+  .repo-div a:link,
+  .demo-div a:link,
+  .techStack {
+    text-decoration: none;
+    color: white;
+  }
+.teams .carousel .card img{
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 5%;
+    border: 5px solid rgba(60, 223, 226, 0.459);
+    transition: all 0.3s ease;
+}
+.teams .carousel .card:hover img{
+    border-color: #fff;
+    color: white;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid crimson!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: crimson!important;
+}
+.skills-images {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 30px;
+  }
+
+  
+/* contact section styling */
+.contact .title::after{
+    content: "Get in touch";
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: crimson;
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+.contact .contact-content .info .sub-title{
+    color: #333;
+}
+.contact .right form .fields{
+    display: flex;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+.contact .right form .textarea textarea{
+  padding-top: 10px;
+  resize: none;
+}
+.contact .right form .button-area{
+  display: flex;
+  align-items: center;
+}
+.right form .button-area button{
+  color: #fff;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: crimson;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+.right form .button-area button:hover{
+  color: crimson;
+  background: none;
+}
+/* footer section styling */
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: crimson;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+
+/* responsive media query start */
+@media (max-width: 1104px) {
+    .about .about-content .left img{
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .menu-btn{
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text-2{
+        font-size: 70px;
+    }
+    .home .home-content .text-3{
+        font-size: 35px;
+    }
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .about .about-content .column{
+        width: 100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .right{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+    .skills .skills-content .column,
+    .contact .contact-content .column{
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 60px;
+    }
+    .home .home-content .text-3{
+        font-size: 32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 50px;
+    }
+    .home .home-content .text-3{
+        font-size: 27px;
+    }
+    .about .about-content .right .text,
+    .skills .skills-content .left .text{
+        font-size: 19px;
+    }
+    .contact .right form .fields{
+        flex-direction: column;
+    }
+    .contact .right form .name,
+    .contact .right form .email{
+        margin: 0;
+    }
+    .right form .error-box{
+       width: 150px;
+    }
+    .scroll-up-btn{
+        right: 15px;
+        bottom: 15px;
+        height: 38px;
+        width: 35px;
+        font-size: 23px;
+        line-height: 38px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: devicon;
+    src: url(../fonts/devicon.eot?-hdf3wh);
+    src: url(../fonts/devicon.eot?#iefix-hdf3wh) format("embedded-opentype"), url(../fonts/devicon.woff?-hdf3wh) format("woff"), url(../fonts/devicon.ttf?-hdf3wh) format("truetype"), url(../fonts/devicon.svg?-hdf3wh#devicon) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+[class*=" devicon-"],
+[class^=devicon-] {
+    font-family: devicon;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.devicon-express-original-wordmark:before {
+    content: "\e93c"
+}
+
+.devicon-express-original:before {
+    content: "\e93d"
+}
+
+.devicon-devicon-plain-wordmark:before {
+    content: "\e93a"
+}
+
+.devicon-devicon-plain:before {
+    content: "\e93b"
+}
+
+.devicon-intellij-plain-wordmark:before {
+    content: "\e932"
+}
+
+.devicon-intellij-plain:before {
+    content: "\e933"
+}
+
+.devicon-pycharm-plain-wordmark:before {
+    content: "\e934"
+}
+
+.devicon-pycharm-plain:before {
+    content: "\e935"
+}
+
+.devicon-rubymine-plain-wordmark:before {
+    content: "\e936"
+}
+
+.devicon-rubymine-plain:before {
+    content: "\e937"
+}
+
+.devicon-webstorm-plain-wordmark:before {
+    content: "\e938"
+}
+
+.devicon-webstorm-plain:before {
+    content: "\e939"
+}
+
+.devicon-tomcat-line-wordmark:before {
+    content: "\e92c"
+}
+
+.devicon-tomcat-line:before {
+    content: "\e92d"
+}
+
+.devicon-vuejs-line-wordmark:before {
+    content: "\e92e"
+}
+
+.devicon-vuejs-line:before {
+    content: "\e92f"
+}
+
+.devicon-vuejs-plain-wordmark:before {
+    content: "\e930"
+}
+
+.devicon-vuejs-plain:before {
+    content: "\e931"
+}
+
+.devicon-swift-plain-wordmark:before {
+    content: "\e92a"
+}
+
+.devicon-swift-plain:before {
+    content: "\e92b"
+}
+
+.devicon-webpack-plain-wordmark:before {
+    content: "\e928"
+}
+
+.devicon-webpack-plain:before {
+    content: "\e929"
+}
+
+.devicon-visualstudio-plain-wordmark:before {
+    content: "\e926"
+}
+
+.devicon-visualstudio-plain:before {
+    content: "\e927"
+}
+
+.devicon-slack-plain-wordmark:before {
+    content: "\e924"
+}
+
+.devicon-slack-plain:before {
+    content: "\e925"
+}
+
+.devicon-facebook-original:before,
+.devicon-facebook-plain:before {
+    content: "\e91c"
+}
+
+.devicon-typescript-original:before,
+.devicon-typescript-plain:before {
+    content: "\e920"
+}
+
+.devicon-babel-original:before,
+.devicon-babel-plain:before {
+    content: "\e921"
+}
+
+.devicon-mocha-plain:before {
+    content: "\e919"
+}
+
+.devicon-jasmine-plain-wordmark:before {
+    content: "\e91b"
+}
+
+.devicon-jasmine-plain:before {
+    content: "\e91a"
+}
+
+.devicon-gatling-plain-wordmark:before {
+    content: "\e918"
+}
+
+.devicon-gatling-plain:before {
+    content: "\e917"
+}
+
+.devicon-ssh-original-wordmark:before,
+.devicon-ssh-plain-wordmark:before {
+    content: "\e916"
+}
+
+.devicon-ssh-original:before,
+.devicon-ssh-plain:before {
+    content: "\e915"
+}
+
+.devicon-sourcetree-original-wordmark:before,
+.devicon-sourcetree-plain-wordmark:before {
+    content: "\e914"
+}
+
+.devicon-sourcetree-original:before,
+.devicon-sourcetree-plain:before {
+    content: "\e913"
+}
+
+.devicon-phpstorm-plain-wordmark:before {
+    content: "\e912"
+}
+
+.devicon-phpstorm-plain:before {
+    content: "\e911"
+}
+
+.devicon-protractor-plain-wordmark:before {
+    content: "\e901"
+}
+
+.devicon-protractor-plain:before {
+    content: "\e900"
+}
+
+.devicon-gradle-plain-wordmark:before {
+    content: "\e8f1"
+}
+
+.devicon-gradle-plain:before {
+    content: "\e902"
+}
+
+.devicon-cucumber-plain-wordmark:before {
+    content: "\e905"
+}
+
+.devicon-cucumber-plain:before {
+    content: "\e904"
+}
+
+.devicon-jeet-plain-wordmark:before {
+    content: "\e906"
+}
+
+.devicon-jeet-plain:before {
+    content: "\e903"
+}
+
+.devicon-gitlab-plain-wordmark:before {
+    content: "\e908"
+}
+
+.devicon-gitlab-plain:before {
+    content: "\e907"
+}
+
+.devicon-github-original-wordmark:before,
+.devicon-github-plain-wordmark:before {
+    content: "\e90a"
+}
+
+.devicon-github-original:before,
+.devicon-github-plain:before {
+    content: "\e909"
+}
+
+.devicon-d3js-plain:before {
+    content: "\e90c"
+}
+
+.devicon-confluence-original-wordmark:before,
+.devicon-confluence-plain-wordmark:before {
+    content: "\e90e"
+}
+
+.devicon-confluence-original:before,
+.devicon-confluence-plain:before {
+    content: "\e90d"
+}
+
+.devicon-bitbucket-original-wordmark:before,
+.devicon-bitbucket-plain-wordmark:before {
+    content: "\e910"
+}
+
+.devicon-bitbucket-original:before,
+.devicon-bitbucket-plain:before {
+    content: "\e90f"
+}
+
+.devicon-safari-line-wordmark:before {
+    content: "\e632"
+}
+
+.devicon-safari-line:before {
+    content: "\e63a"
+}
+
+.devicon-safari-plain-wordmark:before {
+    content: "\e63b"
+}
+
+.devicon-safari-plain:before {
+    content: "\e63c"
+}
+
+.devicon-jetbrains-line-wordmark:before,
+.devicon-jetbrains-line:before,
+.devicon-jetbrains-plain-wordmark:before,
+.devicon-jetbrains-plain:before {
+    content: "\e63d"
+}
+
+.devicon-django-line-wordmark:before,
+.devicon-django-line:before {
+    content: "\e63e"
+}
+
+.devicon-django-plain-wordmark:before,
+.devicon-django-plain:before {
+    content: "\e63f"
+}
+
+.devicon-gimp-plain:before {
+    content: "\e633"
+}
+
+.devicon-redhat-plain-wordmark:before {
+    content: "\e62a"
+}
+
+.devicon-redhat-plain:before {
+    content: "\e62b"
+}
+
+.devicon-cplusplus-line-wordmark:before,
+.devicon-cplusplus-line:before {
+    content: "\e634"
+}
+
+.devicon-cplusplus-plain-wordmark:before,
+.devicon-cplusplus-plain:before {
+    content: "\e635"
+}
+
+.devicon-csharp-line-wordmark:before,
+.devicon-csharp-line:before {
+    content: "\e636"
+}
+
+.devicon-csharp-plain-wordmark:before,
+.devicon-csharp-plain:before {
+    content: "\e637"
+}
+
+.devicon-c-line-wordmark:before,
+.devicon-c-line:before {
+    content: "\e638"
+}
+
+.devicon-c-plain-wordmark:before,
+.devicon-c-plain:before {
+    content: "\e639"
+}
+
+.devicon-nodewebkit-line-wordmark:before {
+    content: "\e611"
+}
+
+.devicon-nodewebkit-line:before {
+    content: "\e612"
+}
+
+.devicon-nodewebkit-plain-wordmark:before {
+    content: "\e613"
+}
+
+.devicon-nodewebkit-plain:before {
+    content: "\e614"
+}
+
+.devicon-nginx-original-wordmark:before,
+.devicon-nginx-original:before,
+.devicon-nginx-plain-wordmark:before,
+.devicon-nginx-plain:before {
+    content: "\e615"
+}
+
+.devicon-erlang-plain-wordmark:before {
+    content: "\e616"
+}
+
+.devicon-erlang-plain:before {
+    content: "\e617"
+}
+
+.devicon-doctrine-line-wordmark:before {
+    content: "\e618"
+}
+
+.devicon-doctrine-line:before {
+    content: "\e619"
+}
+
+.devicon-doctrine-plain-wordmark:before {
+    content: "\e61a"
+}
+
+.devicon-doctrine-plain:before {
+    content: "\e625"
+}
+
+.devicon-apache-line-wordmark:before {
+    content: "\e626"
+}
+
+.devicon-apache-line:before {
+    content: "\e627"
+}
+
+.devicon-apache-plain-wordmark:before {
+    content: "\e628"
+}
+
+.devicon-apache-plain:before {
+    content: "\e629"
+}
+
+.devicon-go-line:before {
+    content: "\e610"
+}
+
+.devicon-redis-plain-wordmark:before {
+    content: "\e606"
+}
+
+.devicon-redis-plain:before {
+    content: "\e607"
+}
+
+.devicon-meteor-plain-wordmark:before {
+    content: "\e608"
+}
+
+.devicon-meteor-plain:before {
+    content: "\e609"
+}
+
+.devicon-heroku-line-wordmark:before,
+.devicon-heroku-original-wordmark:before {
+    content: "\e60a"
+}
+
+.devicon-heroku-line:before,
+.devicon-heroku-original:before {
+    content: "\e60b"
+}
+
+.devicon-heroku-plain-wordmark:before {
+    content: "\e60c"
+}
+
+.devicon-heroku-plain:before {
+    content: "\e60f"
+}
+
+.devicon-go-plain:before {
+    content: "\e61b"
+}
+
+.devicon-docker-plain-wordmark:before {
+    content: "\e61e"
+}
+
+.devicon-docker-plain:before {
+    content: "\e61f"
+}
+
+.devicon-amazonwebservices-original:before,
+.devicon-amazonwebservices-plain:before {
+    content: "\e603"
+}
+
+.devicon-amazonwebservices-plain-wordmark:before {
+    content: "\e604"
+}
+
+.devicon-android-plain-wordmark:before {
+    content: "\e60d"
+}
+
+.devicon-android-plain:before {
+    content: "\e60e"
+}
+
+.devicon-angularjs-plain-wordmark:before {
+    content: "\e61c"
+}
+
+.devicon-angularjs-plain:before {
+    content: "\e61d"
+}
+
+.devicon-appcelerator-original:before,
+.devicon-appcelerator-plain:before {
+    content: "\e620"
+}
+
+.devicon-appcelerator-plain-wordmark:before {
+    content: "\e621"
+}
+
+.devicon-apple-original:before,
+.devicon-apple-plain:before {
+    content: "\e622"
+}
+
+.devicon-atom-original-wordmark:before,
+.devicon-atom-plain-wordmark:before {
+    content: "\e623"
+}
+
+.devicon-atom-original:before,
+.devicon-atom-plain:before {
+    content: "\e624"
+}
+
+.devicon-backbonejs-plain-wordmark:before {
+    content: "\e62c"
+}
+
+.devicon-backbonejs-plain:before {
+    content: "\e62d"
+}
+
+.devicon-bootstrap-plain-wordmark:before {
+    content: "\e62e"
+}
+
+.devicon-bootstrap-plain:before {
+    content: "\e62f"
+}
+
+.devicon-bower-line-wordmark:before {
+    content: "\e630"
+}
+
+.devicon-bower-line:before {
+    content: "\e631"
+}
+
+.devicon-bower-plain-wordmark:before {
+    content: "\e64e"
+}
+
+.devicon-bower-plain:before {
+    content: "\e64f"
+}
+
+.devicon-chrome-plain-wordmark:before {
+    content: "\e665"
+}
+
+.devicon-chrome-plain:before {
+    content: "\e666"
+}
+
+.devicon-codeigniter-plain-wordmark:before {
+    content: "\e667"
+}
+
+.devicon-codeigniter-plain:before {
+    content: "\e668"
+}
+
+.devicon-coffeescript-original-wordmark:before,
+.devicon-coffeescript-plain-wordmark:before {
+    content: "\e669"
+}
+
+.devicon-coffeescript-original:before,
+.devicon-coffeescript-plain:before {
+    content: "\e66a"
+}
+
+.devicon-css3-plain-wordmark:before {
+    content: "\e678"
+}
+
+.devicon-css3-plain:before {
+    content: "\e679"
+}
+
+.devicon-debian-plain-wordmark:before {
+    content: "\e67e"
+}
+
+.devicon-debian-plain:before {
+    content: "\e67f"
+}
+
+.devicon-dot-net-plain-wordmark:before {
+    content: "\e6d3"
+}
+
+.devicon-dot-net-plain:before {
+    content: "\e6d4"
+}
+
+.devicon-drupal-plain-wordmark:before {
+    content: "\e6e2"
+}
+
+.devicon-drupal-plain:before {
+    content: "\e6e3"
+}
+
+.devicon-firefox-plain-wordmark:before {
+    content: "\e75d"
+}
+
+.devicon-firefox-plain:before {
+    content: "\e75e"
+}
+
+.devicon-foundation-plain-wordmark:before {
+    content: "\e7a2"
+}
+
+.devicon-foundation-plain:before {
+    content: "\e7a3"
+}
+
+.devicon-git-plain-wordmark:before {
+    content: "\e7a7"
+}
+
+.devicon-git-plain:before {
+    content: "\e7a8"
+}
+
+.devicon-google-original-wordmark:before,
+.devicon-google-plain-wordmark:before {
+    content: "\e91d"
+}
+
+.devicon-google-original:before,
+.devicon-google-plain:before {
+    content: "\e91e"
+}
+
+.devicon-grunt-line-wordmark:before {
+    content: "\e7a9"
+}
+
+.devicon-grunt-line:before {
+    content: "\e7aa"
+}
+
+.devicon-grunt-plain-wordmark:before {
+    content: "\e7ea"
+}
+
+.devicon-grunt-plain:before {
+    content: "\e7eb"
+}
+
+.devicon-gulp-plain:before {
+    content: "\e7ec"
+}
+
+.devicon-html5-plain-wordmark:before {
+    content: "\e7f6"
+}
+
+.devicon-html5-plain:before {
+    content: "\e7f7"
+}
+
+.devicon-ie10-original:before,
+.devicon-ie10-plain:before {
+    content: "\e7f8"
+}
+
+.devicon-illustrator-line:before {
+    content: "\e7f9"
+}
+
+.devicon-illustrator-plain:before {
+    content: "\e7fa"
+}
+
+.devicon-inkscape-plain-wordmark:before {
+    content: "\e834"
+}
+
+.devicon-inkscape-plain:before {
+    content: "\e835"
+}
+
+.devicon-java-plain-wordmark:before {
+    content: "\e841"
+}
+
+.devicon-java-plain:before {
+    content: "\e842"
+}
+
+.devicon-javascript-plain:before {
+    content: "\e845"
+}
+
+.devicon-jquery-plain-wordmark:before {
+    content: "\e849"
+}
+
+.devicon-jquery-plain:before {
+    content: "\e84a"
+}
+
+.devicon-krakenjs-plain-wordmark:before {
+    content: "\e84f"
+}
+
+.devicon-krakenjs-plain:before {
+    content: "\e850"
+}
+
+.devicon-laravel-plain-wordmark:before {
+    content: "\e851"
+}
+
+.devicon-laravel-plain:before {
+    content: "\e852"
+}
+
+.devicon-less-plain-wordmark:before {
+    content: "\e853"
+}
+
+.devicon-linux-plain:before {
+    content: "\eb1c"
+}
+
+.devicon-mongodb-plain-wordmark:before {
+    content: "\eb43"
+}
+
+.devicon-mongodb-plain:before {
+    content: "\eb44"
+}
+
+.devicon-moodle-plain-wordmark:before {
+    content: "\eb5a"
+}
+
+.devicon-moodle-plain:before {
+    content: "\eb5b"
+}
+
+.devicon-mysql-plain-wordmark:before {
+    content: "\eb60"
+}
+
+.devicon-mysql-plain:before {
+    content: "\eb61"
+}
+
+.devicon-nodejs-plain-wordmark:before {
+    content: "\eb69"
+}
+
+.devicon-nodejs-plain:before {
+    content: "\eb6a"
+}
+
+.devicon-oracle-original:before,
+.devicon-oracle-plain:before {
+    content: "\eb6b"
+}
+
+.devicon-photoshop-line:before {
+    content: "\eb6c"
+}
+
+.devicon-photoshop-plain:before {
+    content: "\eb6d"
+}
+
+.devicon-php-plain:before {
+    content: "\eb71"
+}
+
+.devicon-postgresql-plain-wordmark:before {
+    content: "\eb7c"
+}
+
+.devicon-postgresql-plain:before {
+    content: "\eb7d"
+}
+
+.devicon-python-plain-wordmark:before {
+    content: "\eb88"
+}
+
+.devicon-python-plain:before {
+    content: "\eb89"
+}
+
+.devicon-rails-plain-wordmark:before {
+    content: "\eba2"
+}
+
+.devicon-rails-plain:before {
+    content: "\eba3"
+}
+
+.devicon-react-original-wordmark:before,
+.devicon-react-plain-wordmark:before {
+    content: "\e600"
+}
+
+.devicon-react-original:before,
+.devicon-react-plain:before {
+    content: "\e601"
+}
+
+.devicon-ruby-plain-wordmark:before {
+    content: "\ebc9"
+}
+
+.devicon-ruby-plain:before {
+    content: "\ebca"
+}
+
+.devicon-sass-original:before,
+.devicon-sass-plain:before {
+    content: "\ebcb"
+}
+
+.devicon-sequelize-original-wordmark:before,
+.devicon-sequelize-plain-wordmark:before {
+    content: "\e922"
+}
+
+.devicon-sequelize-original:before,
+.devicon-sequelize-plain:before {
+    content: "\e923"
+}
+
+.devicon-symfony-original-wordmark:before,
+.devicon-symfony-plain-wordmark:before {
+    content: "\e602"
+}
+
+.devicon-symfony-original:before,
+.devicon-symfony-plain:before {
+    content: "\e605"
+}
+
+.devicon-travis-plain-wordmark:before {
+    content: "\ebcc"
+}
+
+.devicon-travis-plain:before {
+    content: "\ebcd"
+}
+
+.devicon-trello-plain-wordmark:before {
+    content: "\ebce"
+}
+
+.devicon-trello-plain:before {
+    content: "\ebcf"
+}
+
+.devicon-twitter-original:before,
+.devicon-twitter-plain:before {
+    content: "\e91f"
+}
+
+.devicon-ubuntu-plain-wordmark:before {
+    content: "\ebd0"
+}
+
+.devicon-ubuntu-plain:before {
+    content: "\ebd1"
+}
+
+.devicon-vim-plain:before {
+    content: "\ebf3"
+}
+
+.devicon-windows8-original-wordmark:before,
+.devicon-windows8-plain-wordmark:before {
+    content: "\ebf4"
+}
+
+.devicon-windows8-original:before,
+.devicon-windows8-plain:before {
+    content: "\ebf5"
+}
+
+.devicon-wordpress-plain-wordmark:before {
+    content: "\ebfd"
+}
+
+.devicon-wordpress-plain:before {
+    content: "\ebfe"
+}
+
+.devicon-yii-plain-wordmark:before {
+    content: "\ec01"
+}
+
+.devicon-yii-plain:before {
+    content: "\ec02"
+}
+
+.devicon-zend-plain-wordmark:before {
+    content: "\ec03"
+}
+
+.devicon-zend-plain:before {
+    content: "\ec04"
+}
+
+.devicon-express-original-wordmark.colored,
+.devicon-express-original.colored {
+    color: #444
+}
+
+.devicon-devicon-plain-wordmark.colored,
+.devicon-devicon-plain.colored {
+    color: #60be86
+}
+
+.devicon-intellij-plain-wordmark.colored,
+.devicon-intellij-plain.colored {
+    color: #136ba2
+}
+
+.devicon-pycharm-plain-wordmark.colored,
+.devicon-pycharm-plain.colored {
+    color: #4d8548
+}
+
+.devicon-rubymine-plain-wordmark.colored,
+.devicon-rubymine-plain.colored {
+    color: #c12c4c
+}
+
+.devicon-webstorm-plain-wordmark.colored,
+.devicon-webstorm-plain.colored {
+    color: #2788b5
+}
+
+.devicon-tomcat-line-wordmark.colored,
+.devicon-tomcat-line.colored {
+    color: #d1a41a
+}
+
+.devicon-vuejs-line-wordmark.colored,
+.devicon-vuejs-line.colored,
+.devicon-vuejs-plain-wordmark.colored,
+.devicon-vuejs-plain.colored {
+    color: #41b883
+}
+
+.devicon-swift-plain-wordmark.colored,
+.devicon-swift-plain.colored {
+    color: #f05138
+}
+
+.devicon-webpack-plain-wordmark.colored,
+.devicon-webpack-plain.colored {
+    color: #1c78c0
+}
+
+.devicon-visualstudio-plain-wordmark.colored,
+.devicon-visualstudio-plain.colored {
+    color: #68217a
+}
+
+.devicon-slack-plain-wordmark.colored,
+.devicon-slack-plain.colored {
+    color: #2d333a
+}
+
+.devicon-gatling-plain-wordmark.colored,
+.devicon-gatling-plain.colored {
+    color: #e77500
+}
+
+.devicon-ssh-original-wordmark.colored,
+.devicon-ssh-original.colored,
+.devicon-ssh-plain-wordmark.colored,
+.devicon-ssh-plain.colored {
+    color: #231f20
+}
+
+.devicon-sourcetree-original-wordmark.colored,
+.devicon-sourcetree-original.colored,
+.devicon-sourcetree-plain-wordmark.colored,
+.devicon-sourcetree-plain.colored {
+    color: #205081
+}
+
+.devicon-phpstorm-plain-wordmark.colored,
+.devicon-phpstorm-plain.colored {
+    color: #5058a6
+}
+
+.devicon-protractor-plain-wordmark.colored,
+.devicon-protractor-plain.colored {
+    color: #b7111d
+}
+
+.devicon-cucumber-plain-wordmark.colored,
+.devicon-cucumber-plain.colored {
+    color: #00a818
+}
+
+.devicon-gradle-plain-wordmark.colored,
+.devicon-gradle-plain.colored {
+    color: #02303a
+}
+
+.devicon-jeet-plain-wordmark.colored,
+.devicon-jeet-plain.colored {
+    color: #ff664a
+}
+
+.devicon-gitlab-plain-wordmark.colored,
+.devicon-gitlab-plain.colored {
+    color: #e24329
+}
+
+.devicon-github-original-wordmark.colored,
+.devicon-github-original.colored,
+.devicon-github-plain-wordmark.colored,
+.devicon-github-plain.colored {
+    color: #181616
+}
+
+.devicon-d3js-plain.colored {
+    color: #f7974e
+}
+
+.devicon-bitbucket-original-wordmark.colored,
+.devicon-bitbucket-original.colored,
+.devicon-bitbucket-plain-wordmark.colored,
+.devicon-bitbucket-plain.colored,
+.devicon-confluence-original-wordmark.colored,
+.devicon-confluence-original.colored,
+.devicon-confluence-plain-wordmark.colored,
+.devicon-confluence-plain.colored {
+    color: #205081
+}
+
+.devicon-amazonwebservices-original.colored,
+.devicon-amazonwebservices-plain-wordmark.colored,
+.devicon-amazonwebservices-plain.colored {
+    color: #f7a80d
+}
+
+.devicon-android-plain-wordmark.colored,
+.devicon-android-plain.colored {
+    color: #a4c439
+}
+
+.devicon-angularjs-plain-wordmark.colored,
+.devicon-angularjs-plain.colored {
+    color: #c4473a
+}
+
+.devicon-apache-line-wordmark.colored,
+.devicon-apache-line.colored,
+.devicon-apache-plain-wordmark.colored,
+.devicon-apache-plain.colored {
+    color: #303284
+}
+
+.devicon-appcelerator-original.colored,
+.devicon-appcelerator-plain-wordmark.colored,
+.devicon-appcelerator-plain.colored {
+    color: #ac162c
+}
+
+.devicon-apple-original.colored,
+.devicon-apple-plain.colored {
+    color: #000
+}
+
+.devicon-atom-original-wordmark.colored,
+.devicon-atom-original.colored,
+.devicon-atom-plain-wordmark.colored,
+.devicon-atom-plain.colored {
+    color: #67595d
+}
+
+.devicon-babel-original.colored,
+.devicon-babel-plain.colored {
+    color: #f9dc3e
+}
+
+.devicon-backbonejs-plain-wordmark.colored,
+.devicon-backbonejs-plain.colored {
+    color: #002a41
+}
+
+.devicon-bootstrap-plain-wordmark.colored,
+.devicon-bootstrap-plain.colored {
+    color: #59407f
+}
+
+
+
+.devicon-chrome-plain-wordmark.colored,
+.devicon-chrome-plain.colored {
+    color: #ce4e4e
+}
+
+.devicon-codeigniter-plain-wordmark.colored,
+.devicon-codeigniter-plain.colored {
+    color: #ee4323
+}
+
+.devicon-coffeescript-original-wordmark.colored,
+.devicon-coffeescript-original.colored,
+.devicon-coffeescript-plain-wordmark.colored,
+.devicon-coffeescript-plain.colored {
+    color: #28334c
+}
+
+.devicon-cplusplus-line-wordmark.colored,
+.devicon-cplusplus-line.colored,
+.devicon-cplusplus-plain-wordmark.colored,
+.devicon-cplusplus-plain.colored {
+    color: #9c033a
+}
+
+.devicon-csharp-line-wordmark.colored,
+.devicon-csharp-line.colored,
+.devicon-csharp-plain-wordmark.colored,
+.devicon-csharp-plain.colored {
+    color: #68217a
+}
+
+.devicon-css3-plain-wordmark.colored,
+.devicon-css3-plain.colored {
+    color: #3d8fc6
+}
+
+.devicon-debian-plain-wordmark.colored,
+.devicon-debian-plain.colored {
+    color: #a80030
+}
+
+.devicon-django-line-wordmark.colored,
+.devicon-django-line.colored,
+.devicon-django-plain-wordmark.colored,
+.devicon-django-plain.colored {
+    color: #003a2b
+}
+
+.devicon-docker-plain-wordmark.colored,
+.devicon-docker-plain.colored {
+    color: #019bc6
+}
+
+.devicon-doctrine-line-wordmark.colored,
+.devicon-doctrine-line.colored,
+.devicon-doctrine-plain-wordmark.colored,
+.devicon-doctrine-plain.colored {
+    color: #f56d39
+}
+
+.devicon-dot-net-plain-wordmark.colored,
+.devicon-dot-net-plain.colored {
+    color: #1384c8
+}
+
+.devicon-drupal-plain-wordmark.colored,
+.devicon-drupal-plain.colored {
+    color: #0073ba
+}
+
+.devicon-erlang-plain-wordmark.colored,
+.devicon-erlang-plain.colored {
+    color: #a90533
+}
+
+.devicon-facebook-original.colored,
+.devicon-facebook-plain.colored {
+    color: #3d5a98
+}
+
+.devicon-firefox-plain-wordmark.colored,
+.devicon-firefox-plain.colored {
+    color: #dd732a
+}
+
+.devicon-foundation-plain-wordmark.colored,
+.devicon-foundation-plain.colored {
+    color: #008cba
+}
+
+.devicon-gimp-plain-wordmark.colored,
+.devicon-gimp-plain.colored {
+    color: #716955
+}
+
+.devicon-git-plain-wordmark.colored,
+.devicon-git-plain.colored {
+    color: #f34f29
+}
+
+.devicon-go-line.colored,
+.devicon-go-plain.colored {
+    color: #000
+}
+
+.devicon-google-original-wordmark.colored,
+.devicon-google-original.colored,
+.devicon-google-plain-wordmark.colored,
+.devicon-google-plain.colored {
+    color: #587dbd
+}
+
+.devicon-grunt-line-wordmark.colored,
+.devicon-grunt-line.colored,
+.devicon-grunt-plain-wordmark.colored,
+.devicon-grunt-plain.colored {
+    color: #fcaa1a
+}
+
+.devicon-gulp-plain.colored {
+    color: #eb4a4b
+}
+
+.devicon-heroku-line-wordmark.colored,
+.devicon-heroku-line.colored,
+.devicon-heroku-original-wordmark.colored,
+.devicon-heroku-original.colored,
+.devicon-heroku-plain-wordmark.colored,
+.devicon-heroku-plain.colored {
+    color: #6762a6
+}
+
+.devicon-html5-plain-wordmark.colored,
+.devicon-html5-plain.colored {
+    color: #e54d26
+}
+
+.devicon-ie10-original.colored,
+.devicon-ie10-plain.colored {
+    color: #1ebbee
+}
+
+.devicon-illustrator-line.colored,
+.devicon-illustrator-plain.colored {
+    color: #faa625
+}
+
+.devicon-inkscape-plain-wordmark.colored,
+.devicon-inkscape-plain.colored {
+    color: #000
+}
+
+.devicon-java-plain-wordmark.colored,
+.devicon-java-plain.colored {
+    color: #ea2d2e
+}
+
+.devicon-jasmine-plain-wordmark.colored,
+.devicon-jasmine-plain.colored {
+    color: #8a4182
+}
+
+.devicon-javascript-plain.colored {
+    color: #f0db4f
+}
+
+.devicon-jetbrains-line-wordmark.colored,
+.devicon-jetbrains-line.colored,
+.devicon-jetbrains-plain-wordmark.colored,
+.devicon-jetbrains-plain.colored {
+    color: #f68b1f
+}
+
+.devicon-jquery-plain-wordmark.colored,
+.devicon-jquery-plain.colored {
+    color: #0769ad
+}
+
+.devicon-krakenjs-plain-wordmark.colored,
+.devicon-krakenjs-plain.colored {
+    color: #0081c2
+}
+
+.devicon-laravel-plain-wordmark.colored,
+.devicon-laravel-plain.colored {
+    color: #fd4f31
+}
+
+.devicon-less-plain-wordmark.colored {
+    color: #2a4d80
+}
+
+.devicon-linux-plain.colored {
+    color: #000
+}
+
+.devicon-meteor-plain-wordmark.colored,
+.devicon-meteor-plain.colored {
+    color: #df5052
+}
+
+.devicon-mocha-plain.colored {
+    color: #8d6748
+}
+
+.devicon-mongodb-plain-wordmark.colored,
+.devicon-mongodb-plain.colored {
+    color: #4faa41
+}
+
+.devicon-moodle-plain-wordmark.colored,
+.devicon-moodle-plain.colored {
+    color: #f7931e
+}
+
+.devicon-mysql-plain-wordmark.colored,
+.devicon-mysql-plain.colored {
+    color: #00618a
+}
+
+.devicon-nginx-original-wordmark.colored,
+.devicon-nginx-original.colored,
+.devicon-nginx-plain-wordmark.colored,
+.devicon-nginx-plain.colored {
+    color: #090
+}
+
+.devicon-nodejs-plain-wordmark.colored,
+.devicon-nodejs-plain.colored {
+    color: #83cd29
+}
+
+.devicon-nodewebkit-line-wordmark.colored,
+.devicon-nodewebkit-line.colored,
+.devicon-nodewebkit-plain-wordmark.colored,
+.devicon-nodewebkit-plain.colored {
+    color: #3d3b47
+}
+
+.devicon-oracle-original.colored,
+.devicon-oracle-plain-wordmark.colored,
+.devicon-oracle-plain.colored {
+    color: #ea1b22
+}
+
+.devicon-photoshop-line.colored,
+.devicon-photoshop-plain.colored {
+    color: #80b5e2
+}
+
+.devicon-php-plain.colored {
+    color: #6181b6
+}
+
+.devicon-postgresql-plain-wordmark.colored,
+.devicon-postgresql-plain.colored {
+    color: #336791
+}
+
+.devicon-python-plain-wordmark.colored,
+.devicon-python-plain.colored {
+    color: #ffd845
+}
+
+.devicon-rails-plain-wordmark.colored,
+.devicon-rails-plain.colored {
+    color: #a62c46
+}
+
+.devicon-ruby-plain-wordmark.colored,
+.devicon-ruby-plain.colored {
+    color: #d91404
+}
+
+.devicon-safari-line-wordmark.colored,
+.devicon-safari-line.colored,
+.devicon-safari-plain-wordmark.colored,
+.devicon-safari-plain.colored {
+    color: #1b88ca
+}
+
+.devicon-react-original-wordmark.colored,
+.devicon-react-original.colored,
+.devicon-react-plain-wordmark.colored,
+.devicon-react-plain.colored {
+    color: #61dafb
+}
+
+.devicon-redhat-original-wordmark.colored,
+.devicon-redhat-original.colored,
+.devicon-redhat-plain-wordmark.colored,
+.devicon-redhat-plain.colored {
+    color: #e93442
+}
+
+.devicon-redis-plain-wordmark.colored,
+.devicon-redis-plain.colored {
+    color: #d82c20
+}
+
+.devicon-sass-original.colored,
+.devicon-sass-plain-wordmark.colored,
+.devicon-sass-plain.colored {
+    color: #c69
+}
+
+.devicon-sequelize-original-wordmark.colored,
+.devicon-sequelize-original.colored,
+.devicon-sequelize-plain-wordmark.colored,
+
+
+
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+    display: block
+}
+
+h1,
+h2,
+h3,
+h4,
+strong {
+    margin-top: 1em;
+    padding-top: 1em;
+    line-height: 1.25;
+    color: #333
+}
+
+h2 {
+    font-size: 2rem
+}
+
+h3 {
+    font-size: 1.5rem
+}
+
+h4 {
+    font-size: 1rem
+}
+
+ol,
+ul {
+    padding-left: 40px
+}
+
+figure,
+ol,
+p,
+ul {
+    margin: 1em 0
+}
+
+a img {
+    border: 0
+}
+
+#particles-js {
+    background: #1488CC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2B32B2, #1488CC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    display: flex;
+    vertical-align: bottom;
+    width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#particles-js .particles-js-canvas-el {
+    width: 100% !important;
+    height: 100vh !important
+}
+
+.header {
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    font-family: 'Rubik', sans-serif;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    margin: 0 auto;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.header .site-title {
+    font-size: 35px;
+    display: block;
+    line-height: 1;
+    color: #fff;
+   
+}
+
+@media only screen and (min-width:550px) {
+    .header .site-title {
+        margin: 0;
+        font-size: 100px
+    }
+}
+
+.header .site-description {
+    font-size: 20px;
+    display: block;
+    line-height: 1;
+    color: #fff;
+    margin-top: 10px
+}
+
+@media only screen and (min-width:550px) {
+    .header .site-description {
+        font-size: 40px
+    }
+}
+
+.header-links {
+    margin: 10px
+}
+
+.header-links .link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 10px
+}
+
+@media only screen and (min-width:550px) {
+    .header-links .link {
+        font-size: 20px
+    }
+}
+
+.header-icons {
+    display: flex;
+    justify-content: center;
+    text-align: center
+}
+
+.down,
+.header-icons .icon {
+    color: #fff;
+    text-align: center
+}
+
+
+
+
+
+
+
+.user {
+    text-align: center;
+    font-size: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user p {
+    font-size: 16px
+}
+
+@media only screen and (min-width:550px) {
+    .user {
+        flex-wrap: nowrap;
+        font-size: 75px
+    }
+}
+
+
+
+  #imageContainer{
+    width: 60%;
+    height: 200px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .gitClass{
+    width: 100%;
+    height: 80%;
+  }
+
+
+
+
+
+
+  .github{
+    text-align: center;
+  }
+
+  
+  .calendar{
+    max-width: 80vw;
+  }
+  
+  @media (max-width: 900px) {
+  .js-calendar-graph-svg{
+    max-width: 90%;
+    overflow: scroll;
+  }
+  }
+
+
+  @media (max-width: 790px) {
+  
+  .calendar{
+    width: 80vw;
+  }
+}
