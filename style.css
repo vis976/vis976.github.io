@@ -169,7 +169,7 @@ section .title::after{
 /* home section styling */
 .home{
     display: flex;
-    background: url("images/banner.jpg") no-repeat center;
+    background-color: black;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -229,10 +229,18 @@ section .title::after{
     background: none;
 }
 
-/* about section styling */
-.about .title::after{
-    content: "who i am";
+.home__icon_cont i {
+    color: var(--skin-color);
+    font-size: 28px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    margin-right: 10px;
 }
+
+/* about section styling */
+/* .about .title::after{
+    content: "who i am";
+} */
 .about .about-content .left{
     width: 45%;
 }
